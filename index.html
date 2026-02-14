@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>🤍</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:rgb(41, 4, 250);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial;
+  color:rgb(6, 6, 6);
+}
+
+.box{
+  text-align:center;
+}
+
+input{
+  padding:12px;
+  font-size:18px;
+  margin-top:10px;
+}
+
+button{
+  padding:12px 40px;
+  margin-top:10px;
+  font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Enter your Mobile Number🤍( 👉Devutty ninte mobile number to💥</h2>
+  <input type="password" id="pass" placeholder="Code">
+  <br>
+  <button onclick="check()">Open💋</button>
+</div>
+
+<script>
+function check(){
+  const p = document.getElementById("pass").value;
+
+  if(p === "9778319608"){     // your password
+    window.location.href="home.html";
+  }else{
+    alert("Wrong code💔");
+  }
+}
+</script>
+
+</body>
+</html>

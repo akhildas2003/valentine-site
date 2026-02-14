@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  font-family:Arial;
+  display:flex;
+}
+
+/* FULL SCREEN GALLERY */
+.gallery{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  top:0;
+  left:0;
+}
+
+/* all images */
+.gallery img{
+  width:160px;
+  position:absolute;
+  opacity:0;
+  transform:translateY(120px) scale(0.8);
+  animation:rise 0.9s ease forwards;
+}
+
+/* 1️⃣ TOP LEFT */
+.gallery img:nth-child(1){
+  top:20px;
+  left:20px;
+  animation-delay:2s;
+}
+
+/* 2️⃣ below first */
+.gallery img:nth-child(2){
+  bottom:20px;
+  left:20px;
+  animation-delay:4s;
+}
+
+/* 3️⃣ TOP CENTER */
+.gallery img:nth-child(3){
+  top:20px;
+  left:15%;
+  transform:translate(-50%,120px) scale(0.8);
+  animation-delay:6s;
+}
+
+.gallery img:nth-child(4){
+  bottom:120px;
+  left:240px;
+  animation-delay:6.3s;
+}
+
+/* 5️⃣ BOTTOM RIGHT */
+.gallery img:nth-child(5){
+  bottom:20px;
+  left:450px;
+  animation-delay:8s;
+}
+
+/* 6️⃣ RIGHT MIDDLE */
+.gallery img:nth-child(6){
+  top:20px;
+  left:450px;
+  animation-delay:10s;
+}
+
+@keyframes rise{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* START SCREEN */
+#startScreen{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+
+#openBtn{
+  padding:20px 60px;
+  font-size:28px;
+  border:none;
+  border-radius:50px;
+  background:black;
+  color:white;
+  cursor:pointer;
+}
+
+/* LEFT WHITE */
+.left{
+  width:50%;
+  background:#fff;
+}
+
+/* RIGHT BLACK */
+.right{
+  width:50%;
+  background:black;
+  color:white;              /* 🔥 THIS MAKES TEXT WHITE */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="startScreen">
+  <button id="openBtn">#4💖</button>
+</div>
+
+<audio id="bgMusic" src="song.mp3" loop></audio>
+
+<div class="left"></div>
+<div class="right">
+ <div class="conclusion">
+        <h2><B>Conclusion</B></h2>
+        <p>
+          
+
+I don’t know how to explain it perfectly, but my love for you is real and deep. You became very special to me in a way I never expected. Even in silence, my heart thinks of you. No matter what happens, this love will always stay genuine and pure. I just want you to know that you mean a lot to me, and a part of my heart will always care for you, Love You Devutty💖.
+
+        </p>
+    </div>
+
+</div>
+
+<div class="gallery">
+  <img src="IMG_20260212_122230.jpg">
+  <img src="IMG_20260212_122358.jpg">
+  <img src="IMG_20260212_123110.jpg">
+  <img src="IMG_20260212_123317.jpg">
+  <img src="IMG_20260212_123510.jpg">
+  <img src="IMG_20251203_121707_011406.jpg">
+</div>
+
+<script>
+const btn = document.getElementById("openBtn");
+const music = document.getElementById("bgMusic");
+const screen = document.getElementById("startScreen");
+
+btn.onclick = () => {
+  music.play();
+  screen.style.display="none";
+};
+</script>
+
+</body>
+</html>

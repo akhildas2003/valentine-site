@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI;
+}
+.tapBtn{
+  position: fixed;
+  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px 22px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: #3004f3;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.tapBtn:hover{
+  background: #ff1e4d;
+}
+
+/* WHITE SCREEN */
+#startScreen{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+
+#openBtn{
+  padding:20px 60px;
+  font-size:28px;
+  border:none;
+  border-radius:50px;
+  background:black;
+  color:white;
+  cursor:pointer;
+}
+
+/* MAIN PAGE */
+#mainPage{
+  display:none;
+  height:100vh;
+  align-items:center;
+  justify-content:center;
+  background:url("bg.jpg") center/cover no-repeat;
+}
+
+.container{
+  background:rgba(0,0,0,0.6);
+  padding:40px;
+  border-radius:20px;
+  color:white;
+  max-width:700px;
+  text-align:center;
+}
+
+img{
+  width:300px;
+  border-radius:20px;
+  margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+<button class="tapBtn" onclick="location.href='obj.html'">Tap Here></button>
+
+
+<!-- WHITE SCREEN -->
+<div id="startScreen">
+  <button id="openBtn">#3💖</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainPage">
+
+<div class="container">
+<h1>Dear Devutty💋</h1>
+
+<p><B>
+എനിക്ക് വലിയ കവിതകളൊന്നും പറയാൻ അറിയില്ല ദേവുട്ടി, പക്ഷേ ഹൃദയത്തിൽ നിന്നൊരു ചെറിയ കാര്യം പറയാം. നീ എന്റെ ജീവിതത്തിലേക്ക് വന്നതോടെ എല്ലാം കുറച്ചുകൂടി സന്തോഷകരവും ലളിതവുമായി തോന്നുന്നു. സാധാരണ ദിവസങ്ങൾ പോലും നീ ഉണ്ടെങ്കിൽ പ്രത്യേകമാവുന്നു. നിന്റെ ചിരിയും, നിന്റെ കരുതലും, ഞാൻ ഒന്നും പറയാതെ തന്നെ എന്നെ മനസ്സിലാക്കുന്ന ആ സ്വഭാവവും എനിക്ക് വളരെ വിലപ്പെട്ടതാണ്.
+ഈ വാലന്റൈൻസ് ഡേയിൽ, നീ എന്റെ ജീവിതത്തിൽ എത്ര പ്രധാനമാണെന്ന് മാത്രം പറയണം. നിന്നെ കിട്ടിയത് എന്റെ ഭാഗ്യം തന്നെയാണ്. ഈശ്വരന് ഒരു ആയിരം നന്ദി. 💖
+❤️ </B> 
+</p>
+
+<p><B>
+Happy Valentine’s Day  
+My Love💋
+</p></B>
+
+<img src="IMG-20250811-WA0087.jpg">
+</div>
+
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const openBtn = document.getElementById("openBtn");
+const startScreen = document.getElementById("startScreen");
+const mainPage = document.getElementById("mainPage");
+const music = document.getElementById("music");
+
+/* restore music time */
+let time = localStorage.getItem("musicTime");
+if(time){ music.currentTime = time; }
+
+/* OPEN CLICK */
+openBtn.onclick = () => {
+  startScreen.style.display = "none";
+  mainPage.style.display = "flex";
+  music.play().catch(()=>{});
+  
+
+};
+
+/* save time */
+setInterval(()=>{
+  localStorage.setItem("musicTime", music.currentTime);
+},1000);
+</script>
+
+</body>
+</html>
