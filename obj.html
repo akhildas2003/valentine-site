@@ -19,6 +19,7 @@ body{
   height:100vh;
   top:0;
   left:0;
+  pointer-events:none;
 }
 
 /* all images */
@@ -30,46 +31,48 @@ body{
   animation:rise 0.9s ease forwards;
 }
 
-/* 1️⃣ TOP LEFT */
+/* 1 top left */
 .gallery img:nth-child(1){
   top:20px;
   left:20px;
+  animation-delay:1s;
+}
+
+/* 2 top right */
+.gallery img:nth-child(2){
+  top:20px;
+  right:20px;
   animation-delay:2s;
 }
 
-/* 2️⃣ below first */
-.gallery img:nth-child(2){
-  bottom:20px;
-  left:20px;
+/* 3 top center */
+.gallery img:nth-child(3){
+  top:20px;
+  left:50%;
+  transform:translate(-50%,120px) scale(0.8);
+  animation-delay:3s;
+}
+
+/* 4 bottom left */
+.gallery img:nth-child(4){
+  bottom:40px;
+  left:20%;
   animation-delay:4s;
 }
 
-/* 3️⃣ TOP CENTER */
-.gallery img:nth-child(3){
-  top:20px;
-  left:15%;
-  transform:translate(-50%,120px) scale(0.8);
-  animation-delay:6s;
-}
-
-.gallery img:nth-child(4){
-  bottom:120px;
-  left:240px;
-  animation-delay:6.3s;
-}
-
-/* 5️⃣ BOTTOM RIGHT */
+/* 5 bottom right */
 .gallery img:nth-child(5){
   bottom:20px;
-  left:450px;
-  animation-delay:8s;
+  right:20px;
+  animation-delay:5s;
 }
 
-/* 6️⃣ RIGHT MIDDLE */
+/* 6 mid right */
 .gallery img:nth-child(6){
-  top:20px;
-  left:450px;
-  animation-delay:10s;
+  bottom:20%;
+  right:50%;
+  transform:translateY(120px) scale(0.8);
+  animation-delay:6s;
 }
 
 @keyframes rise{
@@ -78,6 +81,8 @@ body{
     transform:translateY(0) scale(1);
   }
 }
+
+
 
 /* START SCREEN */
 #startScreen{
